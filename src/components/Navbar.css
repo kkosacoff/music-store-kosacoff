@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Molle&display=swap');
+
+.navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #0c120cff;
+  padding: 10px;
+  color: #ecebf3ff;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo h1{
+  font-family: 'Yellowtail', cursive;
+  margin-right: 20px;
+}
+
+.links {
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+  margin-left: 20px;
+}
+li a{
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+li a:visited{
+  color: #ecebf3ff;
+  text-decoration: none;
+}

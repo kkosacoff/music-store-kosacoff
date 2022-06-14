@@ -1,3 +1,17 @@
+/* CSS HEX
+--maroon-x-11: #b8336aff;
+--wisteria: #c490d1ff;
+--maximum-blue-purple: #acacdeff;
+--uranian-blue: #abdafcff;
+--azure-x-11-web-color: #e5fcffff; */
+/* CSS HEX */
+:root{
+--black-chocolate: #0c120cff;
+--venetian-red: #c20114ff;
+--nickel: #6d7275ff;
+--light-gray: #c7d6d5ff;
+--ghost-white: #ecebf3ff;}
+
 .App {
   text-align: center;
 }
