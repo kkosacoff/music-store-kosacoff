@@ -1,0 +1,18 @@
+.cart {
+  display: flex;
+
+}
+
+.cart button {
+  color: white;
+  background-color: #0c120cff;
+  border: 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.cart p {
+  margin-left: 10px;
+}

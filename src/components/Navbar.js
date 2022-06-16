@@ -6,7 +6,9 @@ import {
   faHouse,
   faUser,
   faPhone,
+  faCartShopping,
 } from '@fortawesome/free-solid-svg-icons'
+import CartWidget from './CartWidget'
 
 const menuItems = [
   {
@@ -26,7 +28,7 @@ const menuItems = [
   },
 ]
 
-const Navbar = () => {
+const Navbar = ({ cartAmount }) => {
   return (
     <navbar className="navbar">
       <div className="logo">
@@ -44,6 +46,7 @@ const Navbar = () => {
           )
         })}
       </div>
+      <CartWidget cartAmount={0} />
     </navbar>
   )
 }
