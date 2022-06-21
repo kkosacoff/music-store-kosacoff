@@ -1,0 +1,25 @@
+.item-count-container{
+      display: flex;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        margin-top: 15px;
+        justify-content: center;
+        border: 1px black;
+        flex-direction: column;
+}
+
+button{
+  background: black;
+  color: white;
+  margin: 0px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.add-to-cart {
+  background: black;
+  color: white;
+  padding: 10px 25px;
+  margin-top: 10px;
+}
