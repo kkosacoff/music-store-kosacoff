@@ -30,16 +30,16 @@ const menuItems = [
 
 const Navbar = ({ cartAmount }) => {
   return (
-    <navbar className="navbar">
+    <nav className="navbar">
       <div className="logo">
         <h1>Music Store</h1>
         <FontAwesomeIcon icon={faMusic} size="2x" />
       </div>
       <div className="links">
-        {menuItems.map((item) => {
+        {menuItems.map((item, index) => {
           const { name, icon, link } = item
           return (
-            <li>
+            <li key={index}>
               <FontAwesomeIcon icon={icon} />
               <a href={link}>{name}</a>
             </li>
@@ -47,7 +47,7 @@ const Navbar = ({ cartAmount }) => {
         })}
       </div>
       <CartWidget cartAmount={0} />
-    </navbar>
+    </nav>
   )
 }
 

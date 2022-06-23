@@ -1,0 +1,29 @@
+[
+  {
+    "id":1,
+    "title":"Guitar",
+    "description":"lorem ipsum dolor sit amet, consectetur adipis",
+    "price": 45000,
+    "pictureUrl":"./assets/img/guitar.jpg",
+    "stock": 10,
+    "initial": 0
+  },
+  {
+    "id":2,
+    "title":"Drums",
+    "description":"lorem ipsum dolor sit amet, consectetur adipis",
+    "price": 65000,
+    "pictureUrl":"./assets/img/drums.jpg",
+    "stock": 10,
+    "initial": 0
+  },
+  {
+    "id":3,
+    "title":"Bass",
+    "description":"lorem ipsum dolor sit amet, consectetur adipis",
+    "price": 33000,
+    "pictureUrl":"./assets/img/bass.jpg",
+    "stock": 10,
+    "initial": 0
+  }
+]

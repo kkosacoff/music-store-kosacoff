@@ -5,7 +5,7 @@ const ItemCount = ({ stock, initial }) => {
   const [count, setCount] = useState(initial)
 
   const addItem = () => {
-    if (count < stock) {
+    if (count < stock || count === 0) {
       setCount(count + 1)
     }
   }
