@@ -2,7 +2,7 @@
   {
     "id":1,
     "title":"Guitar",
-    "description":"lorem ipsum dolor sit amet, consectetur adipis",
+    "description":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias illum maxime, odit commodi laudantium soluta quos! Suscipit nihil consectetur corporis.",
     "price": 45000,
     "pictureUrl":"./assets/img/guitar.jpg",
     "stock": 10,
@@ -11,7 +11,7 @@
   {
     "id":2,
     "title":"Drums",
-    "description":"lorem ipsum dolor sit amet, consectetur adipis",
+    "description":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias illum maxime, odit commodi laudantium soluta quos! Suscipit nihil consectetur corporis.",
     "price": 65000,
     "pictureUrl":"./assets/img/drums.jpg",
     "stock": 10,
@@ -20,7 +20,7 @@
   {
     "id":3,
     "title":"Bass",
-    "description":"lorem ipsum dolor sit amet, consectetur adipis",
+    "description":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias illum maxime, odit commodi laudantium soluta quos! Suscipit nihil consectetur corporis.",
     "price": 33000,
     "pictureUrl":"./assets/img/bass.jpg",
     "stock": 10,

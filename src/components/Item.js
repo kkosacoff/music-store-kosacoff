@@ -9,7 +9,6 @@ const Item = ({ title, description, price, pictureUrl, stock, initial }) => {
       <img src={pictureUrl} alt="" />
       <p>{description}</p>
       <p>$ {price}</p>
-      <ItemCount initial={initial} stock={stock} />
     </article>
   )
 }
