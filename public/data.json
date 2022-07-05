@@ -1,28 +1,31 @@
 [
   {
     "id":1,
-    "title":"Guitar",
+    "title":"Epiphone AJ-200-SCE",
+    "category": "Guitar",
     "description":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias illum maxime, odit commodi laudantium soluta quos! Suscipit nihil consectetur corporis.",
     "price": 45000,
-    "pictureUrl":"./assets/img/guitar.jpg",
+    "pictureUrl":"/assets/img/guitar.jpg",
     "stock": 10,
     "initial": 0
   },
   {
     "id":2,
-    "title":"Drums",
+    "title":"Ludwig LCEE-220",
+    "category": "Drums",
     "description":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias illum maxime, odit commodi laudantium soluta quos! Suscipit nihil consectetur corporis.",
     "price": 65000,
-    "pictureUrl":"./assets/img/drums.jpg",
+    "pictureUrl":"/assets/img/drums.jpg",
     "stock": 10,
     "initial": 0
   },
   {
     "id":3,
-    "title":"Bass",
+    "title":"Fender Jazz Bass",
+    "category": "Bass",
     "description":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias illum maxime, odit commodi laudantium soluta quos! Suscipit nihil consectetur corporis.",
     "price": 33000,
-    "pictureUrl":"./assets/img/bass.jpg",
+    "pictureUrl":"/assets/img/bass.jpg",
     "stock": 10,
     "initial": 0
   }

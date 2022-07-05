@@ -20,6 +20,11 @@
   font-family: 'Yellowtail', cursive;
   margin-right: 20px;
 }
+.logo a{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  }
 
 .links {
   display: flex;
@@ -32,9 +37,19 @@ li {
 li a{
   text-decoration: none;
   margin-left: 10px;
+  color: white
+}
+li Link{
+  text-decoration: none;
+  margin-left: 10px;
 }
 
 li a:visited{
+  color: #ecebf3ff;
+  text-decoration: none;
+}
+
+li Link:visited{
   color: #ecebf3ff;
   text-decoration: none;
 }

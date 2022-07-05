@@ -5,8 +5,15 @@
     align-content: center;
   }
 
+.img-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
 .img-col img{
-    width: 20vw;
+    width: 30vw;
 }
 
 .desc-col{
@@ -14,3 +21,7 @@
     flex-direction: column;
     justify-content: center;
   }
+
+.desc-col h1{
+  font-size: 3em;
+}

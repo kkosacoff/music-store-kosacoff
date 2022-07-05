@@ -1,38 +1,35 @@
 import React from 'react'
 import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faMusic,
-  faHouse,
-  faUser,
-  faPhone,
-  faCartShopping,
-} from '@fortawesome/free-solid-svg-icons'
+import { faMusic, faGuitar, faDrum } from '@fortawesome/free-solid-svg-icons'
 import CartWidget from './CartWidget'
+import { Link } from 'react-router-dom'
 
 const menuItems = [
   {
-    name: 'Home',
-    icon: faHouse,
-    link: '/',
+    name: 'Guitar',
+    icon: faGuitar,
+    link: '/category/Guitar',
   },
   {
-    name: 'Nosotros',
-    icon: faUser,
-    link: '/',
+    name: 'Drums',
+    icon: faDrum,
+    link: '/category/Drums',
   },
   {
-    name: 'Contacto',
-    icon: faPhone,
-    link: '/',
+    name: 'Bass',
+    icon: faGuitar,
+    link: '/category/Bass',
   },
 ]
 
-const Navbar = ({ cartAmount }) => {
+const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <h1>Music Store</h1>
+        <Link to={'/'}>
+          <h1>Music Store</h1>
+        </Link>
         <FontAwesomeIcon icon={faMusic} size="2x" />
       </div>
       <div className="links">
@@ -41,7 +38,7 @@ const Navbar = ({ cartAmount }) => {
           return (
             <li key={index}>
               <FontAwesomeIcon icon={icon} />
-              <a href={link}>{name}</a>
+              <Link to={link}>{name}</Link>
             </li>
           )
         })}
