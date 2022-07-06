@@ -8,7 +8,6 @@ const getProduct = (productId) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const productFound = data.filter((item) => item.id === productId)
-      // console.log(productFound)
       resolve(productFound[0])
     }, 700)
   })
@@ -28,16 +27,6 @@ const ItemDetailContainer = ({}) => {
       .then(() => {
         setIsLoading(false)
       })
-
-    // setTimeout(() => {
-    //   fetch('data.json')
-    //     .then((response) => response.json())
-    //     .then((data) => setProduct(data[0]))
-    //     .then(() => {
-    //       setIsLoading(false)
-    //     })
-    //     .catch((error) => console.log(error))
-    // }, 2000)
   }, [itemId])
   return (
     <div className="detail-container">

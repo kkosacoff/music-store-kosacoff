@@ -16,9 +16,7 @@ const Item = ({
     <article className="item">
       <h3>{title}</h3>
       <img src={pictureUrl} alt="" />
-      {/* <p>{description}</p> */}
       <h4>$ {price}</h4>
-      {/* <ItemCount initial={initial} stock={stock} /> */}
       <Link className="buy-button" to={`/item/${id}`}>
         View
       </Link>

@@ -26,8 +26,6 @@ const ItemListContainer = () => {
 
   const { categoryId } = useParams()
 
-  // console.log(categoryId)
-
   useEffect(() => {
     setIsLoading(true)
     getProducts(categoryId)
@@ -35,20 +33,6 @@ const ItemListContainer = () => {
       .then(() => {
         setIsLoading(false)
       })
-    // setTimeout(() => {
-    //   fetch('data.json', {
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //       Accept: 'application/json',
-    //     },
-    //   })
-    //     .then((response) => response.json())
-    //     .then((data) => setProducts(data))
-    //     .then(() => {
-    //       setIsLoading(false)
-    //     })
-    //     .catch((error) => console.log(error))
-    // }, 2000)
   }, [categoryId])
   return (
     <section className="container">
