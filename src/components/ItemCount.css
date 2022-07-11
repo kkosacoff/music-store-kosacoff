@@ -9,10 +9,11 @@
         flex-direction: column;
 }
 
-button{
+.item-count-container button{
   background: black;
   color: white;
-  margin: 0px 10px;
+  margin-right: 10px;
+  margin-left: 10px;
   border: none;
   cursor: pointer;
 }

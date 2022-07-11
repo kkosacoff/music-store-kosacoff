@@ -1,9 +1,12 @@
-import React from 'react'
+import { React, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+
 import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMusic, faGuitar, faDrum } from '@fortawesome/free-solid-svg-icons'
+
 import CartWidget from './CartWidget'
-import { Link } from 'react-router-dom'
+import useCartContext from '../store/CartContext'
 
 const menuItems = [
   {
@@ -24,6 +27,12 @@ const menuItems = [
 ]
 
 const Navbar = () => {
+  const { cart, getCartCount, cartCount } = useCartContext()
+
+  useEffect(() => {
+    getCartCount()
+  }, [cart, getCartCount])
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -43,7 +52,7 @@ const Navbar = () => {
           )
         })}
       </div>
-      <CartWidget cartAmount={0} />
+      <CartWidget cartAmount={cartCount} />
     </nav>
   )
 }

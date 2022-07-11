@@ -1,16 +1,22 @@
 import { React, useState } from 'react'
 import ItemCount from './ItemCount'
+import useCartContext from '../store/CartContext'
 import { Link } from 'react-router-dom'
 import './ItemDetail.css'
 
 const ItemDetail = ({ product }) => {
   const [isInCart, setIsInCart] = useState(false)
+  const { addToCart } = useCartContext()
+
   const onAdd = (count) => {
     if (count <= 0) {
       console.error('La cantidad a agregar no puede ser 0')
     } else {
-      console.log(`Se agregaron ${count} productos a tu carrito`)
+      addToCart(product, count)
       setIsInCart(true)
+      console.log(
+        `Se agrego ${product.title} por ${count} unidades a tu carrito`
+      )
     }
   }
 

@@ -16,14 +16,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     }
   }
 
-  const addToCart = () => {
-    if (count <= 0) {
-      console.error('La cantidad a agregar no puede ser 0')
-    } else {
-      console.log(`Se agregaron ${count} productos a tu carrito`)
-    }
-  }
-
   return (
     <div className="item-count-container">
       <div className="button-container">
