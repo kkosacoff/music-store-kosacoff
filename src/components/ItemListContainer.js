@@ -1,8 +1,11 @@
 import { React, useEffect, useState } from 'react'
+import { Grid } from 'react-loading-icons'
 import './ItemListContainer.css'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
 import data from '../data/data'
+
+import { getFireStore, doc, getDoc } from 'firebase/firestore'
 
 const getProducts = (catId) => {
   return new Promise((resolve, reject) => {
@@ -36,7 +39,16 @@ const ItemListContainer = () => {
   }, [categoryId])
   return (
     <section className="container">
-      {isLoading ? <h1>Loading...</h1> : <ItemList products={products} />}
+      {isLoading ? (
+        <Grid
+          className="loading"
+          fill="#565656"
+          stroke="transparent"
+          speed={2}
+        />
+      ) : (
+        <ItemList products={products} />
+      )}
     </section>
   )
 }

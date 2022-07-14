@@ -1,4 +1,3 @@
-import { keyboard } from '@testing-library/user-event/dist/keyboard'
 import React from 'react'
 import Item from './Item'
 import './ItemList.css'

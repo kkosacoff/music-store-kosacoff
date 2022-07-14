@@ -7,6 +7,7 @@ const useCartContext = () => useContext(CartContext)
 export function CartContextProvider({ children }) {
   const [cart, setCart] = useState([])
   const [cartCount, setCartCount] = useState(0)
+  const [cartAmount, setCartAmount] = useState(0)
 
   const addToCart = (item, quantity) => {
     if (isInCart(item.id)) {
@@ -42,6 +43,11 @@ export function CartContextProvider({ children }) {
     cart.forEach((item) => (totalQuantity += item.quantity))
     setCartCount(totalQuantity)
   }
+  const getCartAmount = () => {
+    let totalAmount = 0
+    cart.forEach((item) => (totalAmount += item.quantity * item.price))
+    setCartAmount(totalAmount)
+  }
 
   return (
     <CartContext.Provider
@@ -51,7 +57,9 @@ export function CartContextProvider({ children }) {
         removeItem,
         clearCart,
         cartCount,
+        cartAmount,
         getCartCount,
+        getCartAmount,
       }}
     >
       {children}

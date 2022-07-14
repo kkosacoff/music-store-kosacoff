@@ -27,11 +27,13 @@ const menuItems = [
 ]
 
 const Navbar = () => {
-  const { cart, getCartCount, cartCount } = useCartContext()
+  const { cart, getCartCount, cartCount, getCartAmount, cartAmount } =
+    useCartContext()
 
   useEffect(() => {
     getCartCount()
-  }, [cart, getCartCount])
+    getCartAmount()
+  }, [cart])
 
   return (
     <nav className="navbar">
@@ -52,7 +54,7 @@ const Navbar = () => {
           )
         })}
       </div>
-      <CartWidget cartAmount={cartCount} />
+      <CartWidget cartCount={cartCount} cartAmount={cartAmount} />
     </nav>
   )
 }

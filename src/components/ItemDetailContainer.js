@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
+import Grid from 'react-loading-icons/dist/esm/components/grid'
 import './ItemDetailContainer.css'
 import { useParams } from 'react-router-dom'
 import data from '../data/data'
@@ -13,7 +14,7 @@ const getProduct = (productId) => {
   })
 }
 
-const ItemDetailContainer = ({}) => {
+const ItemDetailContainer = () => {
   const [product, setProduct] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
@@ -30,7 +31,16 @@ const ItemDetailContainer = ({}) => {
   }, [itemId])
   return (
     <div className="detail-container">
-      {isLoading ? <h1>Loading</h1> : <ItemDetail product={product} />}
+      {isLoading ? (
+        <Grid
+          className="loading"
+          fill="#565656"
+          stroke="transparent"
+          speed={2}
+        />
+      ) : (
+        <ItemDetail product={product} />
+      )}
     </div>
   )
 }
