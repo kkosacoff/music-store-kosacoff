@@ -3,31 +3,20 @@ import ItemDetail from './ItemDetail'
 import Grid from 'react-loading-icons/dist/esm/components/grid'
 import './ItemDetailContainer.css'
 import { useParams } from 'react-router-dom'
-import data from '../data/data'
-
-const getProduct = (productId) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const productFound = data.filter((item) => item.id === productId)
-      resolve(productFound[0])
-    }, 700)
-  })
-}
+import { getProduct } from '../services/firestore'
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
   const { itemId } = useParams()
-  // console.log(itemId)
 
   useEffect(() => {
     setIsLoading(true)
-    getProduct(itemId)
-      .then((response) => setProduct(response))
-      .then(() => {
-        setIsLoading(false)
-      })
+    getProduct(itemId).then((response) => {
+      setProduct(response)
+      setIsLoading(false)
+    })
   }, [itemId])
   return (
     <div className="detail-container">

@@ -28,7 +28,9 @@ const CartView = () => {
                 <article className="cart-item" key={item.id}>
                   <img src={item.pictureUrl} alt={item.title} />
                   <div className="item-details">
-                    <h2 className="cart-title">{item.title}</h2>
+                    <Link to={`/item/${item.id}`}>
+                      <h2 className="cart-title">{item.title}</h2>
+                    </Link>
                     <p className="cart-price">Price: ${item.price}</p>
                     <p className="cart-quantity">Quantity: {item.quantity}</p>
                   </div>

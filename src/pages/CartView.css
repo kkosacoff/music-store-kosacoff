@@ -23,6 +23,13 @@
 }
 .item-details h2{
     margin: 0;
+    text-decoration: none;
+    color: black;
+}
+.item-details h2:visited{
+    margin: 0;
+    text-decoration: none;
+    color: black;
 }
 
 .cart-item{
