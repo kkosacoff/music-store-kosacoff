@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app'
 import {
+  addDoc,
   getFirestore,
   collection,
   doc,
@@ -63,6 +64,27 @@ export async function getProduct(id) {
   }
 
   return productObj
+}
+
+export async function sendOrder(cart, cartTotal, buyer) {
+  const order = {
+    buyer: buyer,
+    items: cart.map((cartItem) => {
+      return {
+        name: cartItem.title,
+        id: cartItem.id,
+        price: cartItem.price,
+        quantity: cartItem.quantity,
+      }
+    }),
+    date: new Date(),
+    total: cartTotal,
+  }
+  const db = getFirestore()
+  const ordersCollection = collection(db, 'orders')
+  const orderDoc = await addDoc(ordersCollection, order)
+
+  return orderDoc
 }
 
 export default db

@@ -33,7 +33,7 @@ const Navbar = () => {
   useEffect(() => {
     getCartCount()
     getCartAmount()
-  }, [cart])
+  }, [cart, getCartAmount, getCartCount])
 
   return (
     <nav className="navbar">

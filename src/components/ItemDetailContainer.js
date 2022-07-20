@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
-import Grid from 'react-loading-icons/dist/esm/components/grid'
+import Bars from 'react-loading-icons/dist/esm/components/bars'
 import './ItemDetailContainer.css'
 import { useParams } from 'react-router-dom'
 import { getProduct } from '../services/firestore'
@@ -21,7 +21,7 @@ const ItemDetailContainer = () => {
   return (
     <div className="detail-container">
       {isLoading ? (
-        <Grid
+        <Bars
           className="loading"
           fill="#565656"
           stroke="transparent"

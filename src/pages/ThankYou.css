@@ -1,0 +1,14 @@
+.order{
+width: 35%;
+  text-align: center;
+  border-style: solid;
+  margin-top: 5vw;
+  padding: 3vw;
+  }
+
+  .order-container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 3vw;
+    }

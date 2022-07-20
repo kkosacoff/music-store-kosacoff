@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react'
-import { Grid } from 'react-loading-icons'
+import { Bars } from 'react-loading-icons'
 import './ItemListContainer.css'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
@@ -21,7 +21,7 @@ const ItemListContainer = () => {
   return (
     <section className="container">
       {isLoading ? (
-        <Grid
+        <Bars
           className="loading"
           fill="#565656"
           stroke="transparent"

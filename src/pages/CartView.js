@@ -1,60 +1,50 @@
-import React from 'react'
-import useCartContext from '../store/CartContext'
 import './CartView.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
+import Bars from 'react-loading-icons/dist/esm/components/bars'
+import { React, useState } from 'react'
+import useCartContext from '../store/CartContext'
+import CartContainer from '../components/CartContainer'
+import BuyerForm from '../components/BuyerForm'
+import { sendOrder } from '../services/firestore'
+import { Link, useNavigate } from 'react-router-dom'
 
 const CartView = () => {
-  const { cart, removeItem, clearCart, cartAmount } = useCartContext()
+  const [isLoading, setIsLoading] = useState(false)
+
+  const { cart, cartAmount, clearCart, user, setOrderId } = useCartContext()
+
+  let navigate = useNavigate()
+
+  const finishPurchase = () => {
+    setIsLoading(true)
+    sendOrder(cart, cartAmount, user).then(({ id }) => {
+      console.log(id)
+      setOrderId(id)
+      navigate('/thankyou')
+      clearCart()
+    })
+  }
+
   return (
     <div className="cart-container">
-      <h1>Your Cart</h1>
+      <h1>Order Details</h1>
 
-      {cart.length > 0 ? (
-        <>
-          <button className="clear-cart" onClick={() => clearCart()}>
-            Clear Cart
-            <FontAwesomeIcon
-              className="trash-icon"
-              icon={faTrashCan}
-              color="#FFFFF"
-              style={{ marginLeft: '10px' }}
-            />
+      {isLoading ? (
+        <Bars
+          className="loading"
+          fill="#565656"
+          stroke="transparent"
+          speed={2}
+        />
+      ) : cart.length > 0 ? (
+        <div className="cart-view-main">
+          <div className="form-cart">
+            <BuyerForm finishPurchase={finishPurchase} />
+            <CartContainer />
+          </div>
+          <button className="cart-checkout" onClick={() => finishPurchase()}>
+            Buy
           </button>
-          <div className="cart-items">
-            {cart.map((item) => {
-              return (
-                <article className="cart-item" key={item.id}>
-                  <img src={item.pictureUrl} alt={item.title} />
-                  <div className="item-details">
-                    <Link to={`/item/${item.id}`}>
-                      <h2 className="cart-title">{item.title}</h2>
-                    </Link>
-                    <p className="cart-price">Price: ${item.price}</p>
-                    <p className="cart-quantity">Quantity: {item.quantity}</p>
-                  </div>
-                  <div className="total-item">
-                    <h1>
-                      ${(item.quantity * item.price).toLocaleString('en-US')}
-                    </h1>
-                  </div>
-                  <FontAwesomeIcon
-                    icon={faTrashCan}
-                    color="#990505"
-                    style={{ cursor: 'pointer' }}
-                    onClick={() => {
-                      removeItem(item.id)
-                    }}
-                  />
-                </article>
-              )
-            })}
-          </div>
-          <div className="totals">
-            <h1>Total: ${cartAmount.toLocaleString('en-US')}</h1>
-          </div>
-        </>
+        </div>
       ) : (
         <div className="go-back">
           <h2>Cart is empty. Add items to the cart to continue</h2>
