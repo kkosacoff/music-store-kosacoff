@@ -9,6 +9,7 @@ import {
   getDoc,
   where,
   query,
+  updateDoc,
 } from 'firebase/firestore'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -83,8 +84,20 @@ export async function sendOrder(cart, cartTotal, buyer) {
   const db = getFirestore()
   const ordersCollection = collection(db, 'orders')
   const orderDoc = await addDoc(ordersCollection, order)
+  reduceStock(cart)
 
   return orderDoc
+}
+
+export async function reduceStock(cart) {
+  const db = getFirestore()
+  const productsCollection = collection(db, 'products')
+  cart.forEach(async (cartItem) => {
+    const docRef = doc(productsCollection, cartItem.id)
+    const docRefData = await getDoc(docRef)
+    const itemStock = docRefData.data().stock
+    updateDoc(docRef, { stock: itemStock - cartItem.quantity })
+  })
 }
 
 export default db

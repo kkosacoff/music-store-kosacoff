@@ -7,7 +7,7 @@ const BuyerForm = ({ finishPurchase }) => {
     <div className="buyer-form-container">
       <form className="buyer-form">
         <div className="formfield">
-          <label>Full Name:</label>
+          <label>Full Name</label>
           <input
             value={user.name}
             onChange={(e) => setUser({ ...user, name: e.target.value })}
@@ -16,7 +16,7 @@ const BuyerForm = ({ finishPurchase }) => {
           />
         </div>
         <div className="formfield">
-          <label>Phone:</label>
+          <label>Phone</label>
           <input
             type="phone"
             placeholder="+123456789"
@@ -25,7 +25,7 @@ const BuyerForm = ({ finishPurchase }) => {
           />
         </div>
         <div className="formfield">
-          <label>Email:</label>
+          <label>Email</label>
           <input
             type="email"
             placeholder="john@example.com"

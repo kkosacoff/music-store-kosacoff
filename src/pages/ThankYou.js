@@ -5,8 +5,6 @@ import useCartContext from '../store/CartContext'
 const ThankYou = () => {
   const { orderId, user } = useCartContext()
 
-  console.log(orderId, user)
-
   return (
     <div className="order-container">
       <div className="order">

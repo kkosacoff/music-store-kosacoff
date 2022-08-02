@@ -17,7 +17,6 @@ const CartView = () => {
   const finishPurchase = () => {
     setIsLoading(true)
     sendOrder(cart, cartAmount, user).then(({ id }) => {
-      console.log(id)
       setOrderId(id)
       navigate('/thankyou')
       clearCart()
